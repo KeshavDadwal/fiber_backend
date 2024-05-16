@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selected Option Page</title>
+    <style>
+        select {
+            margin-bottom: 10px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Role and Permission Assign Page</h1>
+    <h1>Select an Option</h1>
+    <form action="/role_permissionSubmit" method="POST">
+        <label for="options">Choose an option from roles:</label>
+        <select id="options" name="rolevalue">
+            {{ range .Data1 }}
+            <option value={{.Id}}>{{ .Role }}</option>
+            {{end}}
+
+        </select>
+
+        <br/>
+        <br/>
+
+        <label for="options">Choose an option from Permissions:</label>
+        <select id="options" name="permissionvalue">
+           {{range .Data2 }}
+           <option value={{.Id}}>{{ .Permission }}</option>
+           {{end}}
+        </select>
+
+        <br/>
+        <br/>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,6 @@
+migrateUp =>    migrate -path db/migration/ -database "postgresql://postgres:Qwerty@12@localhost:5432/fiber?sslmode=disable" -verbose up
+
+make the schema => migrate create -ext sql -dir db/migrations -seq init_schema
+
+
+nodemon  =>   nodemon --exec "go run" main.go
